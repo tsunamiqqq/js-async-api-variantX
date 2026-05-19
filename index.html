@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Фільми та сериали</h1>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Пошук фільмів (англ.)..." autocomplete="off">
+                <ul id="autocompleteList" class="autocomplete-dropdown hidden"></ul>
+            </div>
+            <select id="yearFilter">
+                <option value="">Рік (всі)</option>
+            </select>
+            <select id="genreFilter">
+                <option value="">Жанр (всі)</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Horror">Horror</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+            </select>
+            <select id="ratingFilter">
+                <option value="">Рейтинг (всі)</option>
+                <option value="7">7.0+</option>
+                <option value="8">8.0+</option>
+            </select>
+        </div>
+        <nav>
+            <button id="tabSearch" class="active">Пошук</button>
+            <button id="tabWatchlist">Мій Watchlist</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="searchSection">
+            <div id="errorContainer" class="hidden"></div>
+            <div id="moviesGrid" class="grid"></div>
+            <div id="pagination" class="hidden">
+                <button id="loadMoreBtn">Завантажити ще</button>
+            </div>
+        </section>
+
+        <section id="watchlistSection" class="hidden">
+            <h2>Збережені фільми</h2>
+            <div id="watchlistGrid" class="grid"></div>
+        </section>
+    </main>
+
+    <div id="movieModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody"></div>
+            <div id="recommendationsSection" class="hidden">
+                <h3>Схожі фільми:</h3>
+                <div id="recommendationsGrid" class="recs-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
